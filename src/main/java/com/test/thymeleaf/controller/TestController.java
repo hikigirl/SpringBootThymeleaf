@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TestController {
 	private final AddressMapper mapper;
-	@GetMapping("/m1")
+    private final InitializingBean classPathFileSystemWatcher;
+
+    @GetMapping("/m1")
 	public String m1(Model model) {
 		int count = 100;
 		String name = "아무개";
@@ -54,7 +57,6 @@ public class TestController {
 		model.addAttribute("a", a);
 		model.addAttribute("b", b);
 		//model.addAttribute("name", name);
-		
 		return "m3";
 	}
 	
@@ -115,8 +117,33 @@ public class TestController {
 		
 		model.addAttribute("seq", seq);
 		model.addAttribute("mode", mode);
+
+        Map<String, String> map = new HashMap<>();
+        map.put("search", "y");
+        map.put("column", "subject");
+        map.put("word", "java");
+
+        model.addAttribute("map", map);
 		
 		return "m7";
 	}
+    @GetMapping("/m8")
+    public String m8(Model model) {
+
+        int seq = 10;
+        String mode = "add";
+
+        model.addAttribute("seq", seq);
+        model.addAttribute("mode", mode);
+
+        Map<String, String> map = new HashMap<>();
+        map.put("search", "y");
+        map.put("column", "subject");
+        map.put("word", "java");
+
+        model.addAttribute("map", map);
+
+        return "m8";
+    }
 	
 }
