@@ -56,4 +56,7 @@ EL + JSTL 역할
 - 프로젝트 내에서 자주 사용하는(반복되는) 문자열 관리 기능
 - 상수 문자열 관리
 - src/main/resources : `messages.properties`
-- 
+
+### 타임리프 연산자
+- 산술, 비교, 논리, 삼항 => Java & EL과 동일
+- `?:` : 엘비스 연산자

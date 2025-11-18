@@ -42,4 +42,17 @@ public class TestController {
 	public String m2(Model model) {
 		return "m2";
 	}
+	@GetMapping("/m3")
+	public String m3(Model model) {
+		
+		int a = 10;
+		int b = 3;
+		String name="홍길동";
+		
+		model.addAttribute("a", a);
+		model.addAttribute("b", b);
+		//model.addAttribute("name", name);
+		
+		return "m3";
+	}
 }
