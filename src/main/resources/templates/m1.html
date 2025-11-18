@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thyeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -14,7 +14,13 @@
     -->
     <div th:text="${count}">단일값: </div>
     <div th:text="${name}">단일값: </div>
+    <hr>
     <div th:text="123">단일값: </div>
     <div th:text="강아지">단일값: </div>
+    <hr>
+    <div th:text="${name}">이름: 강아지</div>
+    <div th:text="'이름: ' + ${name}"></div>
+    <div>이름: <span th:text="${name}">강아지</span></div>
+    <div></div>
 </body>
 </html>
