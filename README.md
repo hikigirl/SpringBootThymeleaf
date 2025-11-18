@@ -55,3 +55,5 @@ EL + JSTL 역할
 ### Spring Message
 - 프로젝트 내에서 자주 사용하는(반복되는) 문자열 관리 기능
 - 상수 문자열 관리
+- src/main/resources : `messages.properties`
+- 

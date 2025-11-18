@@ -40,7 +40,6 @@ public class TestController {
 	}
 	@GetMapping("/m2")
 	public String m2(Model model) {
-		
 		return "m2";
 	}
 }
