@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +18,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TestController {
 	private final AddressMapper mapper;
-    private final InitializingBean classPathFileSystemWatcher;
-
     @GetMapping("/m1")
 	public String m1(Model model) {
 		int count = 100;
@@ -130,18 +127,22 @@ public class TestController {
     @GetMapping("/m8")
     public String m8(Model model) {
 
-        int seq = 10;
+        int seq = -10;
         String mode = "add";
+
+        Map<String,String> map = new HashMap<String,String>();
+        map.put("search", "y");
+        map.put("column", "subject");
+        map.put("word", "자바");
+
+        List<String> names = mapper.names();
+        List<AddressDTO> list = mapper.list();
 
         model.addAttribute("seq", seq);
         model.addAttribute("mode", mode);
-
-        Map<String, String> map = new HashMap<>();
-        map.put("search", "y");
-        map.put("column", "subject");
-        map.put("word", "java");
-
         model.addAttribute("map", map);
+        model.addAttribute("names", names);
+        model.addAttribute("list", list);
 
         return "m8";
     }
