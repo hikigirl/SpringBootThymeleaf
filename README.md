@@ -51,3 +51,7 @@ EL + JSTL 역할
 3. Message Expression, 메시지 표현식
 4. Link URL Expression, 링크 표현식
 5. Fragment Expression, 조각 페이지 표현식(include)
+
+### Spring Message
+- 프로젝트 내에서 자주 사용하는(반복되는) 문자열 관리 기능
+- 상수 문자열 관리

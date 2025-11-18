@@ -10,6 +10,8 @@ import com.test.thymeleaf.dto.AddressDTO;
 @Mapper
 public interface AddressMapper {
 
+	AddressDTO get(int i);
+
 	
 
 }

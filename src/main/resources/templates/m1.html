@@ -12,15 +12,49 @@
         jsp: 독립 실행 불가능
         Thymeleaf(*.html): 독립 실행 가능
     -->
+    <div>단일값 출력</div>
     <div th:text="${count}">단일값: </div>
     <div th:text="${name}">단일값: </div>
-    <hr>
+    <br>
     <div th:text="123">단일값: </div>
     <div th:text="강아지">단일값: </div>
-    <hr>
+    <br>
     <div th:text="${name}">이름: 강아지</div>
     <div th:text="'이름: ' + ${name}"></div>
     <div>이름: <span th:text="${name}">강아지</span></div>
-    <div></div>
+    <hr>
+    <div>객체(DTO) 출력</div>
+    <ul>
+        <li th:text="${dto}"></li>
+        <li th:text="${dto.name}"></li>
+        <li th:text="${dto.age}"></li>
+        <li th:text="${dto.seq}"></li>
+        <li th:text="${dto.gender}"></li>
+        <li th:text="${dto.address}"></li>
+    </ul>
+    <hr>
+    <div>Map 출력</div>
+    <ul>
+        <li th:text="${map}"></li>
+        <li th:text="${map.get('red')}"></li>
+        <li th:text="${map.red}"></li>
+        <li th:text="${map.['red']}"></li>
+        <li th:text="${map.yellow}"></li>
+        <li th:text="${map.blue}"></li>
+    </ul>
+    <hr>
+    <div>선택 변수 표현식</div>
+    <ul th:object="${dto}">
+        <li th:text="*{name}"></li>
+        <li th:text="*{age}"></li>
+        <li th:text="*{seq}"></li>
+        <li th:text="*{gender}"></li>
+        <li th:text="*{address}"></li>
+    </ul>
+    <ul th:object="${map}">
+        <li th:text="*{red}"></li>
+        <li th:text="*{yellow}"></li>
+        <li th:text="*{blue}"></li>
+    </ul>
 </body>
 </html>

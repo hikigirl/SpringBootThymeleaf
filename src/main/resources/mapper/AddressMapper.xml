@@ -5,6 +5,8 @@
 <!-- src/main/resources -> config -> address.xml -->
 <!-- XML Mapper -->
 <mapper namespace="com.test.thymeleaf.mapper.AddressMapper">
-	<select id="" resultType="AddressDTO"></select>
+	<select id="get" resultType="AddressDTO">
+		select * from tblAddress where seq = #{seq}
+	</select>
 	
 </mapper>
