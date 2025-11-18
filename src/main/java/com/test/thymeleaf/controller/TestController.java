@@ -55,4 +55,23 @@ public class TestController {
 		
 		return "m3";
 	}
+	
+	@GetMapping("/m4")
+	public String m4(Model model) {
+
+		model.addAttribute("count", 10);
+		model.addAttribute("name", "아무개");
+		model.addAttribute("color", "cornflowerblue");
+		
+		return "m4";
+	}
+	@GetMapping("/m5")
+	public String m5(Model model) {
+		
+		String txt1="홍길동입니다.";
+
+		model.addAttribute("txt1", txt1);
+		
+		return "m5";
+	}
 }

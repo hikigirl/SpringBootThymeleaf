@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK" />
+</head>
+<body>
+    <!-- m4.html -->
+    <h1>HTML 속성 조작하기</h1>
+    <div>PCDATA: innerText, textContent</div>
+    <div th:text="${count}"></div>
+
+    <div><input type="text" value="100"></div>
+    <div><input type="text" th:value="${count}"></div>
+
+    <div>일반 html 속성과 타임리프 속성이 겹치면 타임리프가 우선한다.</div>
+    <div><input type="text" th:value="${name}" value="아무개" th:title="${name}" ></div>
+    <div><input type="text" th:value="${name}" th:size="${count}"></div>
+    <div>
+        <input type="checkbox" checked>
+        <input type="checkbox" th:checked="true">
+        <input type="checkbox" th:checked="false">
+        <input type="checkbox" th:checked="${count>0}">
+    </div>
+    <div>
+        <select>
+            <option value="아무개" th:selected="${name=='아무개'}">아무개</option>
+            <option value="홍길동" th:selected="${name=='홍길동'}">홍길동</option>
+            <option value="테스트" th:selected="${name=='테스트'}">테스트</option>
+        </select>
+    </div>
+    <div style="background-color: cornflowerblue;">상자</div>
+    <div>Could not parse as expression: "background-color: ${color};"</div>
+    <div th:style="|background-color: ${color};|">상자</div>
+</body>
+</html>
