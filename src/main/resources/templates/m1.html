@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thyeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK" />
+</head>
+<body>
+    <!-- m1.html -->
+    <h1>Thymeleaf</h1>
+    <!--
+        jsp: 독립 실행 불가능
+        Thymeleaf(*.html): 독립 실행 가능
+    -->
+    <div th:text="${count}">단일값: </div>
+    <div th:text="${name}">단일값: </div>
+    <div th:text="123">단일값: </div>
+    <div th:text="강아지">단일값: </div>
+</body>
+</html>
