@@ -1,5 +1,6 @@
 package com.test.thymeleaf.controller;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class TestController {
 		
 		int a = 10;
 		int b = 3;
-		String name="홍길동";
+		//String name="홍길동";
 		
 		model.addAttribute("a", a);
 		model.addAttribute("b", b);
@@ -92,4 +93,30 @@ public class TestController {
 		
 		return "m5";
 	}
+	
+	@GetMapping("/m6")
+	public String m6(Model model) {
+
+		int num1 = 1234567;
+		double num2 = 12345.6789;
+		Calendar now = Calendar.getInstance();
+		
+		model.addAttribute("num1", num1);
+		model.addAttribute("num2", num2);
+		model.addAttribute("now", now);
+		
+		return "m6";
+	}
+	@GetMapping("/m7")
+	public String m7(Model model) {
+
+		int seq = 10;
+		String mode = "add";
+		
+		model.addAttribute("seq", seq);
+		model.addAttribute("mode", mode);
+		
+		return "m7";
+	}
+	
 }
