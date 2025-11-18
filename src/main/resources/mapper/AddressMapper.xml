@@ -8,5 +8,12 @@
 	<select id="get" resultType="AddressDTO">
 		select * from tblAddress where seq = #{seq}
 	</select>
+	<select id="names" resultType="String">
+		select name from tblAddress
+	</select>
+	<select id="list" resultType="AddressDTO">
+		select * from tblAddress
+	</select>
+	
 	
 </mapper>

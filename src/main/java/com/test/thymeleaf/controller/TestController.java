@@ -1,6 +1,7 @@
 package com.test.thymeleaf.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -69,8 +70,25 @@ public class TestController {
 	public String m5(Model model) {
 		
 		String txt1="홍길동입니다.";
+		String txt2="<b>아무개</b>입니다.";
 
 		model.addAttribute("txt1", txt1);
+		model.addAttribute("txt2", txt2);
+		
+		Map<String, String> map = new HashMap<>();
+		map.put("red", "빨강");
+		map.put("blue", "파랑");
+		map.put("yellow", "노랑");
+		
+		List<String> names = mapper.names();
+		List<AddressDTO> list = mapper.list();
+		
+		model.addAttribute("num", 10);
+		model.addAttribute("name", "홍길동");
+		model.addAttribute("dto", mapper.get(1));
+		model.addAttribute("map", map);
+		model.addAttribute("names", names);
+		model.addAttribute("list", list);
 		
 		return "m5";
 	}

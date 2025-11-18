@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK" />
+</head>
+<body>
+    <!-- m5.html -->
+    <h1>콘텐츠 조작</h1>
+    <div th:text="${txt1}"></div>
+    <div th:inline="text">[[${txt1}]]</div>
+    <div>[[${txt1}]]</div>
+    <div th:utext="${txt1}"></div>
+    <hr>
+    <div th:text="${txt2}"></div>
+    <div th:utext="${txt2}"></div>
+    <div>[[${txt2}]]</div>
+    <div>[(${txt2})]</div>
+    <hr>
+    <div th:text="'<input type=text>'"></div>
+    <div th:utext="'<input type=text>'"></div>
+    
+    <div id="list"></div>
+
+    <script>
+        // 자바스크립트에서 컨트롤러가 건네준 값을 사용하는 상황
+        let num1 = [[${num}]];
+        console.log(num1);
+        let name1 = '[[${name}]]';
+        console.log(name1);
+        let dto1 = '[[${dto}]]';
+        console.log(dto1);
+
+    </script>
+    <script th:inline="javascript">
+        let num2 = [[${num}]];
+        console.log(num2);
+        let name2 = [[${name}]];
+        console.log(name2);
+        let dto2 = [[${dto}]];
+        console.log(dto2);
+        console.log(dto2.age);
+        let map2 = [[${map}]];
+        console.log(map2.yellow);
+        let names2 = [[${names}]];
+        console.log(names2);
+        let list2 = [[${list}]];
+        console.log(list2);
+        
+        const list = document.getElementById('list');
+        list2.forEach(dto => {
+            list.innerHTML += `
+                <div>${dto.seq} - ${dto.name}(${dto.age}) - ${dto.address}</div>
+            `;
+        });
+
+    </script>
+</body>
+</html>

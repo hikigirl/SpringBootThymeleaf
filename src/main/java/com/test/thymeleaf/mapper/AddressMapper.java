@@ -12,6 +12,10 @@ public interface AddressMapper {
 
 	AddressDTO get(int i);
 
+	List<String> names();
+
+	List<AddressDTO> list();
+
 	
 
 }

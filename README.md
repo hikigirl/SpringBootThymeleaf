@@ -64,3 +64,18 @@ EL + JSTL 역할
 ### 타임리프로 HTML 태그 속성 조작하기
 - 태그의 대부분의 속성에 `th:`를 붙일 수 있다.
 - `th:` 붙인 속성에는 타임리프를 적용할 수 있다.
+
+### 타임리프로 콘텐츠 조작하기
+- PCDATA 조작
+- 자식태그 조작
+- innerText(textContent)
+- innerHTML
+
+#### Thymeleaf Text
+1. `th:text`: escaped text -> innerText
+2. `th:utext`: unescaped text -> innerHTML
+3. 인라인 출력
+   1. `th:inline="text"`: default
+   2. `th:inline="javascript"` : javascript의 script 태그에서 사용
+   3. `th:inline + [[]]`: `th:text`
+   4. `th:inline + [()]`: `th:utext`
