@@ -79,3 +79,9 @@ EL + JSTL 역할
    2. `th:inline="javascript"` : javascript의 script 태그에서 사용
    3. `th:inline + [[]]`: `th:text`
    4. `th:inline + [()]`: `th:utext`
+
+#### 조각 페이지
+- 조각페이지 조작 기능에 한해서<br>JSP(include) ~ 타임리프 ~ Tiles(Spring)
+- 조각페이지: `templates/inc` - `sub1.html`, `sub2.html`
+
+#### Fragment Expression

@@ -32,5 +32,56 @@
         <div th:case="del">삭제하기</div>
         <div th:case="*">기타</div>
     </div>
+    <!--<ul>
+        <c:forEach items="${names}" var="name">
+            <li>${name}</li>
+        </c:forEach>
+    </ul>-->
+    <hr>
+    <!-- ul이 반복되고 있음... -->
+    <ul th:each="name : ${names}">
+        <li th:text="${name}"></li>
+    </ul>
+    <hr>
+    <ul>
+        <li th:each="name : ${names}" th:text="${name}"></li>
+    </ul>
+    <hr>
+    <th:block th:each="dto: ${list}" th:object="${dto}">
+        <h3 th:text="*{name}">홍길동</h3>
+        <ul>
+            <li th:text="*{address}"></li>
+            <li th:text="*{age}"></li>
+        </ul>
+    </th:block>
+    <hr>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>성별</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <!-- c:forEach items="${list}" var="dto" varStatus="" -->
+        <tr th:each="dto, status : ${list}" th:object="${dto}" th:style=" ${status.even} ? 'background-color:gold' : 'background-color:transparent'">
+            <td th:text="*{seq}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{age}"></td>
+            <td th:text="*{gender}"></td>
+            <td th:text="${status.index}"></td>
+            <td th:text="${status.count}"></td>
+            <td th:text="${status.size}"></td>
+            <td th:text="${status.even}"></td>
+            <td th:text="${status.odd}"></td>
+            <td th:text="${status.first}"></td>
+            <td th:text="${status.last}"></td>
+        </tr>
+    </table>
 </body>
 </html>

@@ -127,7 +127,7 @@ public class TestController {
     @GetMapping("/m8")
     public String m8(Model model) {
 
-        int seq = -10;
+        int seq = 10;
         String mode = "add";
 
         Map<String,String> map = new HashMap<String,String>();
@@ -145,6 +145,10 @@ public class TestController {
         model.addAttribute("list", list);
 
         return "m8";
+    }
+    @GetMapping("/m9")
+    public String m9(Model model) {
+        return "m9";
     }
 	
 }
